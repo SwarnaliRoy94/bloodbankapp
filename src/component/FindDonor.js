@@ -21,63 +21,63 @@ const FindDonor = () => {
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: true
         },
         {
             photo: asset.Image1,
             name: 'Baby',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: true
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: false
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: false
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: true
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: false
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: false
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: false
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: 'available'
+            availability: true
         },
         
     ]

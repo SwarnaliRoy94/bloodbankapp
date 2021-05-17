@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const styles = StyleSheet.create(
@@ -31,20 +31,23 @@ const styles = StyleSheet.create(
             fontSize: 13,
             fontWeight: 'bold'
         },
-        button: {
-            padding: 10,
-            backgroundColor: 'white',
-            borderColor: 'maroon',
-            borderWidth: 1,
-            elevation: 1,
-            borderRadius: 10
+        availabilityStyle: {
+            height: 20,
+            width: 20,
+            borderRadius: 10,
+
         }
     }
 )
 
 const FindDonorCards = ({ photo, name, age, bloodGroup, availability }) => {
+
+    // const [isAvailable, setIsAvailable] = useState(false);
+
+
+
     return (
-        <View style={styles.wrapper}>
+        <TouchableOpacity style={styles.wrapper}>
             <Image
                 source={photo}
                 style={styles.imageStyle}
@@ -54,17 +57,14 @@ const FindDonorCards = ({ photo, name, age, bloodGroup, availability }) => {
                     <Text style={styles.textStyle}>Name: {name}</Text>
                     <Text style={styles.textStyle}>Age: {age}</Text>
                     <Text style={styles.textStyle}>BloodGroup: {bloodGroup}</Text>
-                    <Text style={styles.textStyle}>Availability: {availability}</Text>
+                    <Text style={styles.textStyle}>Availability: {availability ? 'Available' : 'Unavailable'}</Text>
                 </View>
-                <TouchableOpacity
-                    onPress={() => { }}
-                    style={styles.button}
-                >
-                    <Text>Details</Text>
-                </TouchableOpacity>
             </View>
+            <View
+                style={[styles.availabilityStyle, { backgroundColor: availability ? 'green' : 'red' }]}
+            />
 
-        </View>
+        </TouchableOpacity>
     )
 }
 
