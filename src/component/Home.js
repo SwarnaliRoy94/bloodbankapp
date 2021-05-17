@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { asset } from '../assets';
 import Login from './Login';
@@ -67,7 +66,7 @@ const Home = ({ navigation }) => {
       <View style={styles.containerBottom}>
         <TouchableOpacity
           onPress={() => {
-            console.log('pressed');
+            navigation.navigate('FindDonor')
           }}
           style={styles.buttonStyle}
         >

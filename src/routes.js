@@ -5,6 +5,7 @@ import Home from './component/Home';
 import ForgetPassword from './component/ForgetPassword';
 import Otp from './component/Otp';
 import NewPassword from './component/NewPassword';
+import FindDonor from './component/FindDonor';
 
 
 const Stack = createStackNavigator();
@@ -30,6 +31,11 @@ const AppNavigator = () => {
                 name='NewPassword'
                 component={NewPassword}
             />
+            <Stack.Screen
+                name='FindDonor'
+                component={FindDonor}
+            />
+
         </Stack.Navigator>
     )
 }
