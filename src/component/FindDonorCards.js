@@ -40,14 +40,25 @@ const styles = StyleSheet.create(
     }
 )
 
-const FindDonorCards = ({ photo, name, age, bloodGroup, availability }) => {
-
-    // const [isAvailable, setIsAvailable] = useState(false);
-
-
+const FindDonorCards = ({ navigation, photo, name, age, bloodGroup, availability, habit, lastDonation, numOfDonation, email, contactNo }) => {
 
     return (
-        <TouchableOpacity style={styles.wrapper}>
+        <TouchableOpacity
+            onPress={() => {
+                navigation.navigate('DonorDetails', {
+                    photo,
+                    name,
+                    age,
+                    availability,
+                    bloodGroup,
+                    habit,
+                    lastDonation,
+                    numOfDonation,
+                    email,
+                    contactNo
+                })
+            }}
+            style={styles.wrapper}>
             <Image
                 source={photo}
                 style={styles.imageStyle}
@@ -63,7 +74,6 @@ const FindDonorCards = ({ photo, name, age, bloodGroup, availability }) => {
             <View
                 style={[styles.availabilityStyle, { backgroundColor: availability ? 'green' : 'red' }]}
             />
-
         </TouchableOpacity>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { asset } from '../assets';
+import DonorDetails from './DonorDetails';
 import FindDonorCards from './FindDonorCards';
 
 const styles = StyleSheet.create(
@@ -13,7 +14,7 @@ const styles = StyleSheet.create(
     }
 )
 
-const FindDonor = () => {
+const FindDonor = ({ navigation }) => {
 
     const FindDonorArray = [
         {
@@ -21,78 +22,105 @@ const FindDonor = () => {
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: true
-        },
-        {
-            photo: asset.Image1,
-            name: 'Baby',
-            age: 26,
-            bloodGroup: 'O+ve',
-            availability: true
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            availability: false
+            habit: 'No',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: true,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: false
+            habit: 'No',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: false,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: true
+            habit: 'Yes',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: true,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: false
+            habit: 'No',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: true,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: false
+            habit: 'No',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: false,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: false
+            habit: 'No',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: false,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
         {
             photo: asset.Image1,
             name: 'Swarnali Roy',
             age: 26,
             bloodGroup: 'O+ve',
-            availability: true
+            habit: 'Yes',
+            lastDonation: '11.03.2021',
+            numOfDonation: 3,
+            availability: true,
+            email: 'swar@gmail.com',
+            contactNo: '+88016.......'
         },
-        
+
     ]
 
     const renderFindDonorCards = () => {
         return (
-            FindDonorArray.map((item) => {
+            FindDonorArray.map((donor) => {
                 return (
-                    <View style={{ borderBottomWidth: StyleSheet.hairlineWidth , margin: 10}}>
+                    <View style={{ borderBottomWidth: StyleSheet.hairlineWidth, margin: 10 }} key={donor.name}>
                         <FindDonorCards
-                            photo={item.photo}
-                            name={item.name}
-                            age={item.age}
-                            bloodGroup={item.bloodGroup}
-                            availability={item.availability}
+                            navigation={navigation}
+                            photo={donor.photo}
+                            name={donor.name}
+                            age={donor.age}
+                            bloodGroup={donor.bloodGroup}
+                            availability={donor.availability}
+                            habit={donor.habit}
+                            lastDonation={donor.lastDonation}
+                            numOfDonation={donor.numOfDonation}
+                            email={donor.email}
+                            contactNo={donor.contactNo}
                         />
                     </View>
                 )
