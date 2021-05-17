@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
     return (
         <Stack.Navigator
-            headerMode='none'
+            // headerMode='none'
             initialRouteName='Home'>
             <Stack.Screen
                 name='Home'
