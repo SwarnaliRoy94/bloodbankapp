@@ -45,7 +45,7 @@ const FindDonorCards = ({ navigation, photo, name, age, bloodGroup, availability
     return (
         <TouchableOpacity
             onPress={() => {
-                navigation.navigate('DonorDetails', {
+                navigation.navigate('Donor Details', {
                     photo,
                     name,
                     age,

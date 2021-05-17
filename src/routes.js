@@ -7,7 +7,7 @@ import Otp from './component/Otp';
 import NewPassword from './component/NewPassword';
 import FindDonor from './component/FindDonor';
 import DonorDetails from './component/DonorDetails';
-
+import { StyleSheet } from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +15,21 @@ const AppNavigator = () => {
     return (
         <Stack.Navigator
             // headerMode='none'
+            screenOptions={
+                {
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: 'maroon',
+                        borderWidth: StyleSheet.hairlineWidth,
+                        borderColor: ' #a04c4c '
+                    },
+                    headerTitleStyle: {
+                        fontSize: 20,
+                        color: 'pink',
+                        fontWeight: 'bold'
+                    },
+                }
+            }
             initialRouteName='Home'>
             <Stack.Screen
                 name='Home'
@@ -33,14 +48,13 @@ const AppNavigator = () => {
                 component={NewPassword}
             />
             <Stack.Screen
-                name='FindDonor'
+                name='Find A Donor'
                 component={FindDonor}
             />
             <Stack.Screen
-                name='DonorDetails'
+                name='Donor Details'
                 component={DonorDetails}
             />
-
         </Stack.Navigator>
     )
 }

@@ -66,7 +66,7 @@ const Home = ({ navigation }) => {
       <View style={styles.containerBottom}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('FindDonor')
+            navigation.navigate('Find A Donor')
           }}
           style={styles.buttonStyle}
         >
