@@ -75,7 +75,7 @@ const Home = ({ navigation }) => {
 
         <TouchableOpacity
           onPress={() => {
-            console.log('pressed');
+            navigation.navigate('Become Donor')
           }}
           style={styles.buttonStyle}
         >

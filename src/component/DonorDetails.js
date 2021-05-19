@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, ViewBase } from 'react-native';
-import { asset } from '../assets';
 
 const styles = StyleSheet.create(
     {
@@ -31,7 +30,7 @@ const styles = StyleSheet.create(
 
 const DonorDetails = ({ route }) => {
     const { photo, name, age, bloodGroup, habit, lastDonation, numOfDonation, availability, email, contactNo } = route.params;
-    console.log(availability)
+  
     return (
         <View style={styles.Container}>
             <View style={styles.imageWrapper}>

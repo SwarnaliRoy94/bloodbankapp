@@ -8,6 +8,7 @@ import NewPassword from './component/NewPassword';
 import FindDonor from './component/FindDonor';
 import DonorDetails from './component/DonorDetails';
 import { StyleSheet } from 'react-native';
+import BecomeDonor from './component/BecomeDonor';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +55,10 @@ const AppNavigator = () => {
             <Stack.Screen
                 name='Donor Details'
                 component={DonorDetails}
+            />
+            <Stack.Screen
+                name='Become Donor'
+                component={BecomeDonor}
             />
         </Stack.Navigator>
     )
