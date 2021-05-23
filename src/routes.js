@@ -9,6 +9,7 @@ import FindDonor from './component/FindDonor';
 import DonorDetails from './component/DonorDetails';
 import { StyleSheet } from 'react-native';
 import BecomeDonor from './component/BecomeDonor';
+import DonorProfile from './component/DonorProfile';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,10 @@ const AppNavigator = () => {
             <Stack.Screen
                 name='Become Donor'
                 component={BecomeDonor}
+            />
+            <Stack.Screen
+                name='Profile'
+                component={DonorProfile}
             />
         </Stack.Navigator>
     )

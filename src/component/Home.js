@@ -46,6 +46,7 @@ const styles = StyleSheet.create(
 const Home = ({ navigation }) => {
 
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -73,21 +74,47 @@ const Home = ({ navigation }) => {
           <Text>Find A Donor</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Become Donor')
-          }}
-          style={styles.buttonStyle}
-        >
-          <Text>Become A Donor</Text>
-        </TouchableOpacity>
+        {
+          isLogin ? (
+            <>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Profile')
+                }}
+                style={styles.buttonStyle}
+              >
+                <Text>Profile</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setIsLogin(false)
+                }}
+                style={styles.buttonStyle}
+              >
+                <Text>Logout</Text>
+              </TouchableOpacity>
+            </>
 
-        <TouchableOpacity
-          onPress={toggleModal}
-          style={styles.buttonStyle}
-        >
-          <Text>Login to Your Account</Text>
-        </TouchableOpacity>
+          ) : (
+            <>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Become Donor')
+                }}
+                style={styles.buttonStyle}
+              >
+                <Text>Become A Donor</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={toggleModal}
+                style={styles.buttonStyle}
+              >
+                <Text>Login to Your Account</Text>
+              </TouchableOpacity>
+            </>)
+        }
+
+
         <Login
           isVisible={isModalVisible}
           toggleModal={toggleModal}
@@ -95,7 +122,7 @@ const Home = ({ navigation }) => {
         />
 
       </View>
-    </View>
+    </View >
   )
 }
 
