@@ -14,95 +14,101 @@ const styles = StyleSheet.create(
     }
 )
 
+const FindDonorArray = [
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'No',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: true,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'No',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: false,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'Yes',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: true,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'No',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: true,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'No',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: false,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'No',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: false,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+    {
+        photo: asset.Image1,
+        name: 'Swarnali Roy',
+        age: 26,
+        gender: '',
+        bloodGroup: 'O+ve',
+        habit: 'Yes',
+        lastDonation: '11.03.2021',
+        numOfDonation: 3,
+        availability: true,
+        email: 'swar@gmail.com',
+        contactNo: '+88016.......'
+    },
+]
+
 const FindDonor = ({ navigation }) => {
-
-    const FindDonorArray = [
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'No',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: true,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'No',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: false,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'Yes',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: true,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'No',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: true,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'No',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: false,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'No',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: false,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-        {
-            photo: asset.Image1,
-            name: 'Swarnali Roy',
-            age: 26,
-            bloodGroup: 'O+ve',
-            habit: 'Yes',
-            lastDonation: '11.03.2021',
-            numOfDonation: 3,
-            availability: true,
-            email: 'swar@gmail.com',
-            contactNo: '+88016.......'
-        },
-
-    ]
 
     const renderFindDonorCards = () => {
         return (
@@ -114,6 +120,7 @@ const FindDonor = ({ navigation }) => {
                             photo={donor.photo}
                             name={donor.name}
                             age={donor.age}
+                            gender={donor.gender}
                             bloodGroup={donor.bloodGroup}
                             availability={donor.availability}
                             habit={donor.habit}

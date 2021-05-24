@@ -29,8 +29,8 @@ const styles = StyleSheet.create(
 )
 
 const DonorDetails = ({ route }) => {
-    const { photo, name, age, bloodGroup, habit, lastDonation, numOfDonation, availability, email, contactNo } = route.params;
-  
+    const { photo, name, age, gender, bloodGroup, habit, lastDonation, numOfDonation, availability, email, contactNo } = route.params;
+
     return (
         <View style={styles.Container}>
             <View style={styles.imageWrapper}>
@@ -43,6 +43,7 @@ const DonorDetails = ({ route }) => {
             <View style={styles.textWrapper}>
                 <Text style={styles.textStyle}>Name:{name}</Text>
                 <Text style={styles.textStyle}>Age:{age}</Text>
+                <Text style={styles.textStyle}>Gender:{gender}</Text>
                 <Text style={styles.textStyle}>bloodGroup:{bloodGroup}</Text>
                 <Text style={styles.textStyle}>Smoking Habit:{habit}</Text>
                 <Text style={styles.textStyle}>Last Date of Donation:{lastDonation}</Text>

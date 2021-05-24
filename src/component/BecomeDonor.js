@@ -219,7 +219,7 @@ const BecomeDonor = ({ navigation }) => {
                     onChangeText={setHabit}
                     style={styles.inputFieldStyle}
                 />
-                <Text style={styles.textStyle}>When did you last donated blood?</Text>
+                <Text style={styles.textStyle}>When did you last donate blood?</Text>
                 <View style={{alignItems: 'center',padding: 10}}>
                 <DatePicker
                     date={lastDonation}
@@ -250,6 +250,7 @@ const BecomeDonor = ({ navigation }) => {
                 </View>
 
                 <Text style={styles.textStyle}>Upload Your Photo</Text>
+                
                 {
                     avatar !== '' ? (
                         <View style={{ alignItems: 'center', padding: 10 }}>

@@ -40,7 +40,7 @@ const styles = StyleSheet.create(
     }
 )
 
-const FindDonorCards = ({ navigation, photo, name, age, bloodGroup, availability, habit, lastDonation, numOfDonation, email, contactNo }) => {
+const FindDonorCards = ({ navigation, photo, name, age, gender, bloodGroup, availability, habit, lastDonation, numOfDonation, email, contactNo }) => {
 
     return (
         <TouchableOpacity
@@ -49,6 +49,7 @@ const FindDonorCards = ({ navigation, photo, name, age, bloodGroup, availability
                     photo,
                     name,
                     age,
+                    gender,
                     availability,
                     bloodGroup,
                     habit,

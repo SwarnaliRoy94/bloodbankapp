@@ -114,7 +114,6 @@ const Home = ({ navigation }) => {
             </>)
         }
 
-
         <Login
           isVisible={isModalVisible}
           toggleModal={toggleModal}

@@ -10,6 +10,7 @@ import DonorDetails from './component/DonorDetails';
 import { StyleSheet } from 'react-native';
 import BecomeDonor from './component/BecomeDonor';
 import DonorProfile from './component/DonorProfile';
+import EditProfile from './component/EditProfile';
 
 const Stack = createStackNavigator();
 
@@ -40,14 +41,17 @@ const AppNavigator = () => {
             <Stack.Screen
                 name='ForgetPassword'
                 component={ForgetPassword}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='Otp'
                 component={Otp}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='NewPassword'
                 component={NewPassword}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='Find A Donor'
@@ -64,6 +68,10 @@ const AppNavigator = () => {
             <Stack.Screen
                 name='Profile'
                 component={DonorProfile}
+            />
+            <Stack.Screen
+                name='Edit Profile'
+                component={EditProfile}
             />
         </Stack.Navigator>
     )
