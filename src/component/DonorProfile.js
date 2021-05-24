@@ -79,7 +79,7 @@ const profile = {
     contactNo: '+88016.......'
 }
 
-const DonorProfile = ({navigation}) => {
+const DonorProfile = ({ navigation }) => {
 
     const [avatar, setAvatar] = useState('');
 
@@ -125,7 +125,7 @@ const DonorProfile = ({navigation}) => {
                 <View style={styles.submitButtonView}>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate('Edit Profile')
+                            navigation.navigate('Edit Profile');
                         }}
                         style={styles.submitButton}
                     >

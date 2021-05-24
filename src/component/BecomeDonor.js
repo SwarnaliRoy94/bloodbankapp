@@ -1,5 +1,5 @@
-import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react';
+import CheckBox from '@react-native-community/checkbox';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import DatePicker from 'react-native-date-picker'
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
@@ -220,14 +220,14 @@ const BecomeDonor = ({ navigation }) => {
                     style={styles.inputFieldStyle}
                 />
                 <Text style={styles.textStyle}>When did you last donate blood?</Text>
-                <View style={{alignItems: 'center',padding: 10}}>
-                <DatePicker
-                    date={lastDonation}
-                    onDateChange={setLastDonation}
-                    mode={'date'}
-                    maximumDate= {new Date()}
-                    textColor= 'maroon'
-                />
+                <View style={{ alignItems: 'center', padding: 10 }}>
+                    <DatePicker
+                        date={lastDonation}
+                        onDateChange={setLastDonation}
+                        mode={'date'}
+                        maximumDate={new Date()}
+                        textColor='maroon'
+                    />
                 </View>
                 <Text style={styles.textStyle}>How many times have you donated blood?</Text>
                 <TextInput
@@ -250,7 +250,7 @@ const BecomeDonor = ({ navigation }) => {
                 </View>
 
                 <Text style={styles.textStyle}>Upload Your Photo</Text>
-                
+
                 {
                     avatar !== '' ? (
                         <View style={{ alignItems: 'center', padding: 10 }}>
