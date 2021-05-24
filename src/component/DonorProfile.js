@@ -69,14 +69,14 @@ const styles = StyleSheet.create(
 const profile = {
     photo: asset.Image1,
     name: 'Swarnali Roy',
-    age: 26,
-    gender: 'Female',
-    bloodGroup: 'O+ve',
-    habit: 'No',
-    lastDonation: '11.03.2021',
-    numOfDonation: 3,
-    email: 'swar@gmail.com',
-    contactNo: '+88016.......'
+    ageOfDonor: '26',
+    genderOfDonor: 'Female',
+    BG: 'O+ve',
+    smokingHabit: 'No',
+    lastDonationDate: '11.03.2021',
+    NoOfDonation: '3',
+    emailAdd: 'swar@gmail.com',
+    contactNum: '+88016.......'
 }
 
 const DonorProfile = ({ navigation }) => {
@@ -114,18 +114,18 @@ const DonorProfile = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.textWrapper}>
-                <Text style={styles.textStyle} >Age: {profile.age} Years</Text>
-                <Text style={styles.textStyle} >Gender: {profile.gender}</Text>
-                <Text style={styles.textStyle} >E-mail Address: {profile.email}</Text>
-                <Text style={styles.textStyle} >Contact No: {profile.contactNo}</Text>
-                <Text style={styles.textStyle} >Blood Group: {profile.bloodGroup}</Text>
-                <Text style={styles.textStyle} >Smoking Habit: {profile.habit}</Text>
-                <Text style={styles.textStyle} >Last Date of Blood Donation: {profile.lastDonation}</Text>
-                <Text style={styles.textStyle} >Number of Blood Donation: {profile.numOfDonation}</Text>
+                <Text style={styles.textStyle} >Age: {profile.ageOfDonor} Years</Text>
+                <Text style={styles.textStyle} >Gender: {profile.genderOfDonor}</Text>
+                <Text style={styles.textStyle} >E-mail Address: {profile.emailAdd}</Text>
+                <Text style={styles.textStyle} >Contact No: {profile.contactNum}</Text>
+                <Text style={styles.textStyle} >Blood Group: {profile.BG}</Text>
+                <Text style={styles.textStyle} >Smoking Habit: {profile.smokingHabit}</Text>
+                <Text style={styles.textStyle} >Last Date of Blood Donation: {profile.lastDonationDate}</Text>
+                <Text style={styles.textStyle} >Number of Blood Donation: {profile.NoOfDonation}</Text>
                 <View style={styles.submitButtonView}>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate('Edit Profile');
+                            navigation.navigate('Edit Profile',profile);
                         }}
                         style={styles.submitButton}
                     >
