@@ -1,5 +1,7 @@
 import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import DatePicker from 'react-native-date-picker'
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { asset } from '../assets';
 
@@ -34,7 +36,6 @@ const styles = StyleSheet.create(
         button: {
             width: '20%',
             padding: 15,
-            // backgroundColor: 'maroon',
             marginVertical: 10,
             marginHorizontal: 5,
             borderRadius: 10,
@@ -77,7 +78,7 @@ const styles = StyleSheet.create(
         },
         submitButton: {
             width: '50%',
-            padding: 15,
+            padding: 10,
             backgroundColor: 'maroon',
             marginVertical: 10,
             marginHorizontal: 5,
@@ -85,6 +86,24 @@ const styles = StyleSheet.create(
             alignItems: 'center',
             elevation: 1
         },
+        photoUploadBtn: {
+            width: '40%',
+            padding: 10,
+            backgroundColor: 'white',
+            marginVertical: 10,
+            marginHorizontal: 5,
+            borderRadius: 5,
+            // borderColor: 'maroon',
+            // borderWidth: 1,
+            alignItems: 'center',
+            elevation: 2
+        },
+        avatarStyle: {
+            height: 200,
+            width: 200,
+            borderWidth: 1,
+            borderColor: 'black',
+        }
     }
 )
 
@@ -97,9 +116,10 @@ const BecomeDonor = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [habit, setHabit] = useState('');
-    const [lastDonation, setLastDonation] = useState('');
+    const [lastDonation, setLastDonation] = useState(new Date());
     const [numOfDonation, setNumOfDonation] = useState('');
     const [contactNo, setContactNo] = useState('+880');
+    const [avatar, setAvatar] = useState('');
 
     const onSubmit = () => {
 
@@ -113,13 +133,22 @@ const BecomeDonor = ({ navigation }) => {
             habit: habit,
             lastDonation: lastDonation,
             numOfDonation: numOfDonation,
-            contactNo: contactNo
+            contactNo: contactNo,
+            avatar: avatar
         }
         console.log(payLoad);
         navigation.navigate('Home');
     }
+
+    const selectImage = () => {
+        launchImageLibrary({ includeBase64: true }, (res) => {
+            setAvatar(res.base64)
+        })
+    }
+
     return (
         <ScrollView style={styles.container}>
+
             <View style={styles.textWrapper}>
                 <Text>Want to become a donor? Create your account now!</Text>
             </View>
@@ -191,11 +220,15 @@ const BecomeDonor = ({ navigation }) => {
                     style={styles.inputFieldStyle}
                 />
                 <Text style={styles.textStyle}>When did you last donated blood?</Text>
-                <TextInput
-                    value={lastDonation}
-                    onChangeText={setLastDonation}
-                    style={styles.inputFieldStyle}
+                <View style={{alignItems: 'center',padding: 10}}>
+                <DatePicker
+                    date={lastDonation}
+                    onDateChange={setLastDonation}
+                    mode={'date'}
+                    maximumDate= {new Date()}
+                    textColor= 'maroon'
                 />
+                </View>
                 <Text style={styles.textStyle}>How many times have you donated blood?</Text>
                 <TextInput
                     value={numOfDonation}
@@ -215,6 +248,31 @@ const BecomeDonor = ({ navigation }) => {
                         style={styles.contactInputStyle}
                     />
                 </View>
+
+                <Text style={styles.textStyle}>Upload Your Photo</Text>
+                {
+                    avatar !== '' ? (
+                        <View style={{ alignItems: 'center', padding: 10 }}>
+                            <Image source={
+                                { uri: `data:image/png;base64,${avatar}` }
+                            }
+                                style={styles.avatarStyle}
+                            />
+                        </View>
+                    ) : (
+                        <View style={styles.submitButtonView}>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    selectImage()
+                                }}
+                                style={styles.photoUploadBtn}
+                            >
+                                <Text style={{ color: 'maroon' }}>Upload Photo</Text>
+                            </TouchableOpacity>
+                        </View>
+                    )
+                }
+
                 <View style={styles.submitButtonView}>
                     <TouchableOpacity
                         onPress={() => {
